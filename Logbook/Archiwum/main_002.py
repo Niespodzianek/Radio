@@ -24,7 +24,6 @@ def wybor(opcje_wyboru):
     return opcje_wyboru[int(decyzja) - 1]
 
 def wpisanie_korespondenta(info=" "):
-    # TODO Regex
     wpisywanie = True
     while wpisywanie:
         znak_korespondenta = input("Podaj znak" + f"{info}" + "korespondenta: ").upper()
@@ -67,7 +66,6 @@ def nowe_polaczenie(dotychczasowe_dane):
     karta = wybor(KARTA_SQL)
     dotychczasowe_dane.append([czas_utc, "SQO", ZNAK, znak_korespondenta, radio, raport, warunki_atmosferyczne, karta, czas_lokalny])
     nowe_dane_polaczen = dotychczasowe_dane
-    # TODO Zapis do pliku
     return nowe_dane_polaczen
 
 def nowy_nasłuch(dotychczasowe_dane):
@@ -86,7 +84,6 @@ def nowy_nasłuch(dotychczasowe_dane):
             karta = wybor(KARTA_SQL)
             dotychczasowe_dane.append([czas_utc, "SWL", znak_korespondent_pierwszy, znak_korespondent_drugi, radio,raport, warunki_atmosferyczne, karta, czas_lokalny])
             nowe_dane_polaczen = dotychczasowe_dane
-            #TODO Zapis do pliku
             return nowe_dane_polaczen
         else:
             print("Wpisano te same znaki !!!! Jeszcze raz.")
@@ -110,7 +107,6 @@ def menu(dane_polaczen):
     return True
 
 def program():
-    # TODO odczyt z pliku
     baza_polaczen = []
     praca_programu = True
     while praca_programu:
@@ -121,12 +117,3 @@ def program():
 if __name__ == "__main__":
     program()
     print("KONIEC PROGRAMU")
-
-# TODO Kod: z dwóch funkcji dopisywania nowej pozycji zrobić jedną funkcję z flagą / przełącznikiem
-# TODO Kod: użyć Regex do walidacji znaku krótkofalarskiego
-# TODO Idea: Wykres pozycji satelitów na tle Ziemi, na razie tylko ISS
-# TODO Idea: wydruk składu ISS
-# TODO Idea: Notatnik do zapisywania informacji w plikach
-# TODO Dane: dopisanie danych o jakości połączenia: stworzyć raport
-# TODO Dane: dopisanie danych o pogodzie: wskaźniki SFI i K, skrapowane ze strony internetowej
-# TODO Dane: generowanie pliku CSV do analizy statystycznej
